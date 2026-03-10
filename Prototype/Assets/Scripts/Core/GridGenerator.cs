@@ -19,12 +19,16 @@ public class GridGenerator : MonoBehaviour
 
     private void GenerateGrid()
     {
-        float boardWidth = board.rect.width - (2* margin);
-        float boardHeight = board.rect.height - (2 * margin);
+        float boardWidth = board.rect.width - (3* margin);
+        float boardHeight = board.rect.height - (3 * margin);
 
         float cardWidth = (boardWidth - (coloumns - 1) * spacing) / coloumns;
         float cardHeight = (boardHeight - (rows - 1) * spacing) / rows;
 
+        List<int> cardsIds = GenerateCardIDs(rows*coloumns);
+        Shuffle(cardsIds);
+
+        Debug.Log("GridGenerator=> GenerateGrid=> cardsIds = " + cardsIds.Count );
         for (int r=0; r<rows; r++ )
         {
             for (int c=0; c<coloumns; c++)
@@ -33,11 +37,16 @@ public class GridGenerator : MonoBehaviour
                 RectTransform rt = card.GetComponent<RectTransform>();
                 rt.sizeDelta = new Vector2(cardWidth,cardHeight);
 
-                //float startX = -(coloumns - 1) * (cardWidth + spacing) / 2f;
-                //float startY = (rows - 1) * (cardHeight + spacing) / 2f;
+                Card cardScript = card.GetComponent<Card>();
+                int index = r * coloumns + c;
+                cardScript.cardId = cardsIds[index];
+                //cardScript.cardId = r * coloumns + c;
 
-                float startX = -boardWidth / 2f + cardWidth / 2f + margin;
-                float startY = boardHeight / 2f - cardHeight / 2f - margin;
+                float startX = -(coloumns - 1) * (cardWidth + spacing) / 2f;
+                float startY = (rows - 1) * (cardHeight + spacing) / 2f;
+
+                //float startX = -boardWidth / 2f + cardWidth / 2f + margin;
+                //float startY = boardHeight / 2f - cardHeight / 2f + margin;
 
                 float x = startX + c * (cardWidth + spacing);
                 float y = startY - r * (cardHeight + spacing);
@@ -45,5 +54,35 @@ public class GridGenerator : MonoBehaviour
                 rt.anchoredPosition = new Vector2(x,y);
             }
         }
+
+        
     }
+
+    private List<int> GenerateCardIDs(int totalCards)
+    {
+        List<int> ids = new List<int>();
+
+        int pairCount = totalCards / 2;
+
+        for (int i = 0; i < pairCount; i++)
+        {
+            ids.Add(i);
+            ids.Add(i);
+        }
+
+        return ids;
+    }
+
+    private void Shuffle(List<int> _list)
+    {
+        Debug.Log("GridGenerator=> Shuffle " );
+        for (int i=0; i<_list.Count; i++)
+        {
+            int randomIndex = Random.Range(0,i+1);
+            int temp = _list[i];
+            _list[i] = _list[randomIndex];
+            _list[randomIndex] = temp;
+        }
+    }
+
 }

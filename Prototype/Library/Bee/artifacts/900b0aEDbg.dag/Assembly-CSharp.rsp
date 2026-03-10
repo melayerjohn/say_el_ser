@@ -347,8 +347,8 @@
 -r:"Library/Bee/artifacts/900b0aEDbg.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/900b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/900b0aEDbg.dag/UnityEngine.UI.ref.dll"
-"Assets/Scripts/Core/Card.cs"
 "Assets/Scripts/Core/GridGenerator.cs"
+"Assets/Scripts/GamePlay/Card.cs"
 "Assets/Scripts/Managers/GameManager.cs"
 "Assets/Scripts/Managers/ScoreManager.cs"
 -langversion:9.0
