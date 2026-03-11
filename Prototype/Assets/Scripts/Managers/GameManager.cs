@@ -11,6 +11,11 @@ public class GameManager : MonoBehaviour
     private Card firstCard;
     private Card secondCard;
 
+    public int totalPairs;
+    private int matchedPairs = 0;
+
+    [SerializeField] private GameObject gameWinScreen;
+
     private void Awake()
     {
         Instance = this;
@@ -57,7 +62,11 @@ public class GameManager : MonoBehaviour
             card1.SetMatched();
             card2.SetMatched();
 
+            matchedPairs++;
+
             ScoreManager.Instance.AddMatchScore();
+
+            CheckGameComplete();
         }
         else
         {
@@ -69,5 +78,20 @@ public class GameManager : MonoBehaviour
 
         revealCards.Clear();
            
+    }
+
+    private void CheckGameComplete()
+    {
+        if(matchedPairs>=totalPairs)
+        {
+            Debug.Log("Game Completed ");
+            OnGameCompleted();
+        }
+    }
+
+    private void OnGameCompleted()
+    {
+        Debug.Log("Game Completed=> All pairs matched ");
+        gameWinScreen.SetActive(true);
     }
 }

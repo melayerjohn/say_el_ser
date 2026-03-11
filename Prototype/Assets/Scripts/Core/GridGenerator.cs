@@ -26,6 +26,8 @@ public class GridGenerator : MonoBehaviour
         float cardWidth = (boardWidth - (coloumns - 1) * spacing) / coloumns;
         float cardHeight = (boardHeight - (rows - 1) * spacing) / rows;
 
+        GameManager.Instance.totalPairs = (rows * coloumns) / 2;
+
         List<int> cardsIds = GenerateCardIDs(rows*coloumns);
         Shuffle(cardsIds);
 

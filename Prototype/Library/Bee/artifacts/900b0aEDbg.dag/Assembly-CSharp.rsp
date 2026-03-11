@@ -350,6 +350,7 @@
 "Assets/Scripts/Core/GridGenerator.cs"
 "Assets/Scripts/Data/CardSpriteDatabase.cs"
 "Assets/Scripts/GamePlay/Card.cs"
+"Assets/Scripts/GamePlay/GameWinScreen.cs"
 "Assets/Scripts/Managers/GameManager.cs"
 "Assets/Scripts/Managers/ScoreManager.cs"
 -langversion:9.0

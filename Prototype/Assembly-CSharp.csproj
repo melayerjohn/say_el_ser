@@ -63,6 +63,7 @@
     <Compile Include="Assets/Scripts/Managers/GameManager.cs" />
     <Compile Include="Assets/Scripts/Managers/ScoreManager.cs" />
     <Compile Include="Assets/Scripts/Data/CardSpriteDatabase.cs" />
+    <Compile Include="Assets/Scripts/GamePlay/GameWinScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
