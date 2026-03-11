@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
@@ -9,10 +10,21 @@ public class Card : MonoBehaviour
     public GameObject front;
     public GameObject back;
 
+    public Image frontImage;
+    public Sprite[] cardSprites;
+
     private bool isFlipped;
 
     private bool isMatched = false;
     public bool IsMatched => isMatched;
+
+
+    public void Initialize(int _id, Sprite _sprite)
+    {
+        cardId = _id;
+        frontImage.sprite = _sprite;
+        frontImage.preserveAspect = true;
+    }
 
     public void OnCardClicked()
     {

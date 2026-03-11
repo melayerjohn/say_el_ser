@@ -62,6 +62,7 @@
     <Compile Include="Assets/Scripts/GamePlay/Card.cs" />
     <Compile Include="Assets/Scripts/Managers/GameManager.cs" />
     <Compile Include="Assets/Scripts/Managers/ScoreManager.cs" />
+    <Compile Include="Assets/Scripts/Data/CardSpriteDatabase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

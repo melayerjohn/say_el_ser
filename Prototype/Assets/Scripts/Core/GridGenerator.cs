@@ -6,6 +6,7 @@ public class GridGenerator : MonoBehaviour
 {
     public GameObject cardPrefab;
     public RectTransform board;
+    public CardSpriteDatabase spriteDatabase;
 
     public int rows = 2;
     public int coloumns = 2;
@@ -40,6 +41,10 @@ public class GridGenerator : MonoBehaviour
                 Card cardScript = card.GetComponent<Card>();
                 int index = r * coloumns + c;
                 cardScript.cardId = cardsIds[index];
+
+                int id = cardsIds[index];
+                Sprite sprite = spriteDatabase.cardSprites[id];
+                cardScript.Initialize(id, sprite);
                 //cardScript.cardId = r * coloumns + c;
 
                 float startX = -(coloumns - 1) * (cardWidth + spacing) / 2f;

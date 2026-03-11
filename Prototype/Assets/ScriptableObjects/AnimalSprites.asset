@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a1354ab257a49c3a0f3356c5efad42, type: 3}
+  m_Name: AnimalSprites
+  m_EditorClassIdentifier: 
+  cardSprites:
+  - {fileID: 21300000, guid: 88298f73c19824c3393088d4ff3c30a8, type: 3}
+  - {fileID: 21300000, guid: f02d623309fec482abec7591ff64081f, type: 3}
+  - {fileID: 21300000, guid: 52bbbdd33d22941dc85dac4cbd981bf2, type: 3}
+  - {fileID: 21300000, guid: 79d52ea5fe45f49aabf2a0748f739be9, type: 3}
+  - {fileID: 21300000, guid: 52ac6c2e8b49c4ae3bd6bc9bde692ccb, type: 3}
+  - {fileID: 21300000, guid: 70af1264063084ff08649e9056020d44, type: 3}
+  - {fileID: 21300000, guid: 2c819d9afe7cf4218a5c582b5251b698, type: 3}
+  - {fileID: 21300000, guid: b3014152efd4d4dfd9ac726c22208d62, type: 3}

@@ -344,6 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardPrefab: {fileID: 7731865213984093274, guid: c9f040b10ad6b46aba2c17ab951d6375, type: 3}
   board: {fileID: 1396950973}
+  spriteDatabase: {fileID: 11400000, guid: a53a5cf33185f4f6fa986199efa9d5f6, type: 2}
   rows: 4
   coloumns: 4
   spacing: 30
