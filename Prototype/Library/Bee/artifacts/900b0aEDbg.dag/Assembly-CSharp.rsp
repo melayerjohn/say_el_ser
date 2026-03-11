@@ -349,9 +349,13 @@
 -r:"Library/Bee/artifacts/900b0aEDbg.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/Core/GridGenerator.cs"
 "Assets/Scripts/Data/CardSpriteDatabase.cs"
+"Assets/Scripts/Data/GameAudioDatabase.cs"
+"Assets/Scripts/Data/GameSaveData.cs"
 "Assets/Scripts/GamePlay/Card.cs"
 "Assets/Scripts/GamePlay/GameWinScreen.cs"
+"Assets/Scripts/Managers/AudioManager.cs"
 "Assets/Scripts/Managers/GameManager.cs"
+"Assets/Scripts/Managers/SaveSystem.cs"
 "Assets/Scripts/Managers/ScoreManager.cs"
 -langversion:9.0
 /deterministic

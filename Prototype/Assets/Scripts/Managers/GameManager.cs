@@ -15,10 +15,22 @@ public class GameManager : MonoBehaviour
     private int matchedPairs = 0;
 
     [SerializeField] private GameObject gameWinScreen;
+    [SerializeField] private ScoreManager scoreManager;
+    [SerializeField] private SaveSystem saveSystem;
 
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        GameSaveData data = saveSystem.Load();
+
+        if (data != null)
+        {
+            scoreManager.score = data.score;
+        }
     }
 
     public void CardRevealed(Card _card)
@@ -63,8 +75,8 @@ public class GameManager : MonoBehaviour
             card2.SetMatched();
 
             matchedPairs++;
-
-            ScoreManager.Instance.AddMatchScore();
+            AudioManager.Instance.PlayMatch();
+            scoreManager.AddMatchScore();
 
             CheckGameComplete();
         }
@@ -73,7 +85,7 @@ public class GameManager : MonoBehaviour
             card1.FlipBack();
             card2.FlipBack();
 
-            ScoreManager.Instance.AddMismatchPenalty();
+            scoreManager.AddMismatchPenalty();
         }
 
         revealCards.Clear();
@@ -85,6 +97,7 @@ public class GameManager : MonoBehaviour
         if(matchedPairs>=totalPairs)
         {
             Debug.Log("Game Completed ");
+            
             OnGameCompleted();
         }
     }
@@ -92,6 +105,13 @@ public class GameManager : MonoBehaviour
     private void OnGameCompleted()
     {
         Debug.Log("Game Completed=> All pairs matched ");
+        AudioManager.Instance.PlayGameOver();
+        GameSaveData data = new GameSaveData();
+        data.score = scoreManager.score;
+
+        saveSystem.Save(data);
         gameWinScreen.SetActive(true);
+
+        //saveSystem.Clear();
     }
 }

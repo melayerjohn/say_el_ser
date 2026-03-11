@@ -61,9 +61,13 @@
     <Compile Include="Assets/Scripts/Core/GridGenerator.cs" />
     <Compile Include="Assets/Scripts/GamePlay/Card.cs" />
     <Compile Include="Assets/Scripts/Managers/GameManager.cs" />
-    <Compile Include="Assets/Scripts/Managers/ScoreManager.cs" />
-    <Compile Include="Assets/Scripts/Data/CardSpriteDatabase.cs" />
     <Compile Include="Assets/Scripts/GamePlay/GameWinScreen.cs" />
+    <Compile Include="Assets/Scripts/Data/GameAudioDatabase.cs" />
+    <Compile Include="Assets/Scripts/Managers/AudioManager.cs" />
+    <Compile Include="Assets/Scripts/Data/CardSpriteDatabase.cs" />
+    <Compile Include="Assets/Scripts/Managers/ScoreManager.cs" />
+    <Compile Include="Assets/Scripts/Data/GameSaveData.cs" />
+    <Compile Include="Assets/Scripts/Managers/SaveSystem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

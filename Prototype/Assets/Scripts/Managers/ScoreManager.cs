@@ -6,8 +6,6 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static ScoreManager Instance;
-
     public int score;
 
     public int matchPoints = 10;
@@ -16,11 +14,6 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text scoreText;
 
     [SerializeField]private bool isAddMismatchPenalty;
-
-    private void Awake()
-    {
-        Instance = this;
-    }
 
     public void AddMatchScore()
     {

@@ -1,17 +1,21 @@
 ﻿<Properties StartupConfiguration="{B1235EE4-71EE-C815-28F8-C3378E5ADB84}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GamePlay/GameWinScreen.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Managers/SaveSystem.cs">
     <Files>
       <File FileName="Assets/Scripts/Core/GridGenerator.cs" Line="30" Column="1" />
-      <File FileName="Assets/Scripts/GamePlay/Card.cs" Line="26" Column="19" />
-      <File FileName="Assets/Scripts/Managers/GameManager.cs" Line="95" Column="37" />
-      <File FileName="Assets/Scripts/Data/CardSpriteDatabase.cs" Line="8" Column="2" />
-      <File FileName="Assets/Scripts/Managers/ScoreManager.cs" Line="18" Column="20" />
-      <File FileName="Assets/Scripts/GamePlay/GameWinScreen.cs" Line="7" Column="26" />
+      <File FileName="Assets/Scripts/GamePlay/Card.cs" Line="50" Column="27" />
+      <File FileName="Assets/Scripts/Managers/GameManager.cs" Line="96" Column="46" />
+      <File FileName="Assets/Scripts/Data/CardSpriteDatabase.cs" />
+      <File FileName="Assets/Scripts/Managers/ScoreManager.cs" />
+      <File FileName="Assets/Scripts/GamePlay/GameWinScreen.cs" />
+      <File FileName="Assets/Scripts/Managers/AudioManager.cs" Line="17" Column="25" />
+      <File FileName="Assets/Scripts/Data/GameAudioDatabase.cs" />
+      <File FileName="Assets/Scripts/Data/GameSaveData.cs" Line="6" Column="2" />
+      <File FileName="Assets/Scripts/Managers/SaveSystem.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="9c097c00-3afe-40e6-8816-91148f15106f" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ead7b263-73b6-49a3-9198-b1b847df3f26" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

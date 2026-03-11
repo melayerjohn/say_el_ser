@@ -38,6 +38,7 @@ public class Card : MonoBehaviour
 
     public void Flip()
     {
+        AudioManager.Instance.PlayFlip();
         isFlipped = true;
         front.SetActive(true);
         back.SetActive(false);
