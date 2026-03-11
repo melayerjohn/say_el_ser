@@ -7,6 +7,7 @@ public class GameWinScreen : MonoBehaviour
 {
     public void OnReplayClick()
     {
+        GameManager.Instance.GetSaveSystem().Clear();
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }

@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public int totalPairs;
     private int matchedPairs = 0;
 
+    [SerializeField] private Transform popUpParent;
     [SerializeField] private GameObject gameWinScreen;
     [SerializeField] private ScoreManager scoreManager;
     [SerializeField] private SaveSystem saveSystem;
@@ -92,6 +93,11 @@ public class GameManager : MonoBehaviour
            
     }
 
+    public SaveSystem GetSaveSystem()
+    {
+        return saveSystem;
+    }
+
     private void CheckGameComplete()
     {
         if(matchedPairs>=totalPairs)
@@ -110,8 +116,6 @@ public class GameManager : MonoBehaviour
         data.score = scoreManager.score;
 
         saveSystem.Save(data);
-        gameWinScreen.SetActive(true);
-
-        //saveSystem.Clear();
+        Instantiate(gameWinScreen, popUpParent);
     }
 }

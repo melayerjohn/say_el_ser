@@ -18,6 +18,8 @@ public class Card : MonoBehaviour
     private bool isMatched = false;
     public bool IsMatched => isMatched;
 
+    [SerializeField] private float flipDuration = 0.2f;
+
 
     public void Initialize(int _id, Sprite _sprite)
     {
@@ -32,14 +34,25 @@ public class Card : MonoBehaviour
         if (isMatched || isFlipped)
             return;
 
-        Flip();
+        StartCoroutine(FlipAnimation());
+
         GameManager.Instance.CardRevealed(this);
     }
 
-    public void Flip()
+    IEnumerator FlipAnimation()
     {
         AudioManager.Instance.PlayFlip();
+        yield return null;
         isFlipped = true;
+        float time = 0;
+
+        while (time<flipDuration)
+        {
+            transform.Rotate(0, 180 * Time.deltaTime / flipDuration, 0) ;
+            time += Time.deltaTime;
+            yield return null;
+        }
+
         front.SetActive(true);
         back.SetActive(false);
         Debug.Log("Card=> Flip=> cardId = " + cardId );
@@ -47,6 +60,24 @@ public class Card : MonoBehaviour
 
     public void FlipBack()
     {
+
+        StartCoroutine(FlipBackAnimation());
+        
+    }
+
+    IEnumerator FlipBackAnimation()
+    {
+        yield return null;
+
+        float time = 0;
+
+        while (time < flipDuration)
+        {
+            transform.Rotate(0, -180 * Time.deltaTime / flipDuration, 0);
+            time += Time.deltaTime;
+            yield return null;
+        }
+
         isFlipped = false;
 
         front.SetActive(false);
