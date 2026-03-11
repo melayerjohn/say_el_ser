@@ -68,6 +68,7 @@
     <Compile Include="Assets/Scripts/Managers/AudioManager.cs" />
     <Compile Include="Assets/Scripts/Data/CardSpriteDatabase.cs" />
     <Compile Include="Assets/Scripts/Managers/ScoreManager.cs" />
+    <Compile Include="Assets/Scripts/Managers/MenuManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

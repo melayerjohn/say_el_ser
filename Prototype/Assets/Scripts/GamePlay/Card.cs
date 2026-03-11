@@ -34,6 +34,8 @@ public class Card : MonoBehaviour
         if (isMatched || isFlipped)
             return;
 
+        GameManager.Instance.GetScoreManager().turn++;
+        GameManager.Instance.GetScoreManager().UpdateScoreUI();
         StartCoroutine(FlipAnimation());
 
         GameManager.Instance.CardRevealed(this);
@@ -56,13 +58,12 @@ public class Card : MonoBehaviour
         front.SetActive(true);
         back.SetActive(false);
         Debug.Log("Card=> Flip=> cardId = " + cardId );
+      
     }
 
     public void FlipBack()
     {
-
         StartCoroutine(FlipBackAnimation());
-        
     }
 
     IEnumerator FlipBackAnimation()
@@ -79,10 +80,11 @@ public class Card : MonoBehaviour
         }
 
         isFlipped = false;
-
+        
         front.SetActive(false);
         back.SetActive(true);
 
+         
         Debug.Log("Card=> FlipBack=> cardId = " + cardId);
     }
 

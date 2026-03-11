@@ -7,8 +7,10 @@ public class GameWinScreen : MonoBehaviour
 {
     public void OnReplayClick()
     {
-        GameManager.Instance.GetSaveSystem().Clear();
+        Debug.Log("GameWinScreen => OnReplayClick = " + PlayerPrefs.GetString("GAME_SAVE"));
+        //GameManager.Instance.GetSaveSystem().Clear();
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
+        Debug.Log("GameWinScreen => OnReplayClick = " + PlayerPrefs.GetString("GAME_SAVE"));
     }
 }

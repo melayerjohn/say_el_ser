@@ -355,6 +355,7 @@
 "Assets/Scripts/GamePlay/GameWinScreen.cs"
 "Assets/Scripts/Managers/AudioManager.cs"
 "Assets/Scripts/Managers/GameManager.cs"
+"Assets/Scripts/Managers/MenuManager.cs"
 "Assets/Scripts/Managers/SaveSystem.cs"
 "Assets/Scripts/Managers/ScoreManager.cs"
 -langversion:9.0

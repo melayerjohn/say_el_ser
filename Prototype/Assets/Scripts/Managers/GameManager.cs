@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject gameWinScreen;
     [SerializeField] private ScoreManager scoreManager;
     [SerializeField] private SaveSystem saveSystem;
+    [SerializeField] private MenuManager menuManager;
+    [SerializeField] private GridGenerator gridGenerator;
 
     private void Awake()
     {
@@ -31,7 +34,16 @@ public class GameManager : MonoBehaviour
         if (data != null)
         {
             scoreManager.score = data.score;
+            scoreManager.UpdateScoreUI();
         }
+
+        Debug.Log(" GameManager => Start => "+ scoreManager.score);
+    }
+
+
+    public void SetMode(int mode=2)
+    {
+        gridGenerator.Initialize(mode);
     }
 
     public void CardRevealed(Card _card)
@@ -52,23 +64,12 @@ public class GameManager : MonoBehaviour
             secondCard = null;
         }
 
-
-        //revealCards.Add(_card);
-        //if(revealCards.Count==2)
-        //{
-        //    Card card1 = revealCards[0];
-        //    Card card2 = revealCards[1];
-
-        //    revealCards.RemoveAt(0);
-        //    revealCards.RemoveAt(0);
-
-        //    StartCoroutine(CheckMatch(card1, card2));
-        //}
     }
 
     IEnumerator CheckMatch(Card card1, Card card2)
     {
         yield return new WaitForSeconds(0.5f);
+
 
         if (card1.cardId == card2.cardId)
         {
@@ -77,7 +78,7 @@ public class GameManager : MonoBehaviour
 
             matchedPairs++;
             AudioManager.Instance.PlayMatch();
-            scoreManager.AddMatchScore();
+            scoreManager.AddMatchScore(matchedPairs);
 
             CheckGameComplete();
         }
@@ -85,8 +86,6 @@ public class GameManager : MonoBehaviour
         {
             card1.FlipBack();
             card2.FlipBack();
-
-            scoreManager.AddMismatchPenalty();
         }
 
         revealCards.Clear();
@@ -96,6 +95,11 @@ public class GameManager : MonoBehaviour
     public SaveSystem GetSaveSystem()
     {
         return saveSystem;
+    }
+
+    public ScoreManager GetScoreManager()
+    {
+        return scoreManager;
     }
 
     private void CheckGameComplete()
@@ -117,5 +121,11 @@ public class GameManager : MonoBehaviour
 
         saveSystem.Save(data);
         Instantiate(gameWinScreen, popUpParent);
+    }
+
+    public void OnClickMenu()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 }

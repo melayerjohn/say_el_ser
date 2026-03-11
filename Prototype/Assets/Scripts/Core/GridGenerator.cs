@@ -13,8 +13,28 @@ public class GridGenerator : MonoBehaviour
     public float spacing = 20f;
     public float margin = 50f;
 
-    private void Start()
+    public void Initialize(int mode)
     {
+        switch (mode)
+        {
+            case 1:
+                rows = 2;
+                coloumns = 2;
+                break;
+            case 2:
+                rows = 3;
+                coloumns = 2;
+                break;
+            case 3:
+                rows = 4;
+                coloumns = 4;
+                break;
+
+            default:
+                rows = 4;
+                coloumns = 4;
+                break;
+        }
         GenerateGrid();
     }
 

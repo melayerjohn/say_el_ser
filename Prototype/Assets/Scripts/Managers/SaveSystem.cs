@@ -12,6 +12,7 @@ public class SaveSystem : MonoBehaviour
         string dataString = JsonUtility.ToJson(_data);
         PlayerPrefs.SetString(SAVE_KEY, dataString);
         PlayerPrefs.Save();
+        Debug.Log("SaveSystem=> save = "+ PlayerPrefs.GetString(SAVE_KEY));
     }
 
     public GameSaveData Load()
